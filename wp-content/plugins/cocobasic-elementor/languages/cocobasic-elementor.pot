@@ -1,0 +1,347 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: CocoBasic - Ukko Elementor Widgets\n"
+"POT-Creation-Date: 2020-01-03 21:28+0100\n"
+"PO-Revision-Date: 2020-01-03 21:28+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Author of the plugin/theme
+#: index.php:101
+msgid "CocoBasic"
+msgstr ""
+
+#: widgets/button/index.php:20
+msgid "Coco Button"
+msgstr ""
+
+#: widgets/button/index.php:35 widgets/home-blog/index.php:35
+#: widgets/home-section/index.php:35 widgets/imageslider/index.php:35
+#: widgets/imageslider/index.php:85 widgets/portfolio/index.php:35
+#: widgets/skills-lines/index.php:35 widgets/timeline/index.php:35
+msgid "Content"
+msgstr ""
+
+#: widgets/button/index.php:41 widgets/button/index.php:44
+msgid "Button"
+msgstr ""
+
+#: widgets/button/index.php:50
+msgid "Button Link (optional)"
+msgstr ""
+
+#: widgets/button/index.php:61
+msgid "Alignment"
+msgstr ""
+
+#: widgets/button/index.php:65
+msgid "Left"
+msgstr ""
+
+#: widgets/button/index.php:69
+msgid "Center"
+msgstr ""
+
+#: widgets/button/index.php:73
+msgid "Right"
+msgstr ""
+
+#: widgets/button/index.php:88 widgets/home-blog/index.php:53
+#: widgets/home-section/index.php:137 widgets/imageslider/index.php:141
+#: widgets/portfolio/index.php:53 widgets/skills-lines/index.php:78
+#: widgets/timeline/index.php:77
+msgid "General"
+msgstr ""
+
+#: widgets/button/index.php:95 widgets/home-section/index.php:144
+msgid "Text Color"
+msgstr ""
+
+#: widgets/button/index.php:106
+msgid "Text Hover Color"
+msgstr ""
+
+#: widgets/button/index.php:117 widgets/home-section/index.php:155
+#: widgets/portfolio/index.php:81 widgets/skills-lines/index.php:86
+msgid "Text Typography"
+msgstr ""
+
+#: widgets/button/index.php:124
+msgid "Border Height"
+msgstr ""
+
+#: widgets/home-blog/index.php:20
+msgid "Latest Posts"
+msgstr ""
+
+#: widgets/home-blog/index.php:41
+msgid "Number of items to show"
+msgstr ""
+
+#: widgets/home-blog/index.php:44
+msgid "5"
+msgstr ""
+
+#: widgets/home-blog/index.php:60
+msgid "Line Separator Color"
+msgstr ""
+
+#: widgets/home-blog/index.php:70 widgets/portfolio/index.php:70
+msgid "Title color"
+msgstr ""
+
+#: widgets/home-blog/index.php:81
+msgid "Title Typography"
+msgstr ""
+
+#: widgets/home-blog/index.php:88
+msgid "Date color"
+msgstr ""
+
+#: widgets/home-blog/index.php:99
+msgid "Date Typography"
+msgstr ""
+
+#: widgets/home-blog/index.php:106 widgets/portfolio/index.php:88
+msgid "Category color"
+msgstr ""
+
+#: widgets/home-blog/index.php:117 widgets/portfolio/index.php:100
+msgid "Category Typography"
+msgstr ""
+
+#: widgets/home-section/index.php:20
+msgid "Home Section"
+msgstr ""
+
+#: widgets/home-section/index.php:41
+msgid "Text"
+msgstr ""
+
+#: widgets/home-section/index.php:50
+msgid "Text Parallax (Xpx Ypx)"
+msgstr ""
+
+#: widgets/home-section/index.php:59 widgets/imageslider/index.php:52
+msgid "Image"
+msgstr ""
+
+#: widgets/home-section/index.php:70
+msgid "Image Parallax (Xpx Ypx)"
+msgstr ""
+
+#: widgets/home-section/index.php:79
+msgid "Scroll Down Image"
+msgstr ""
+
+#: widgets/home-section/index.php:90
+msgid "Scroll Down Image Link"
+msgstr ""
+
+#: widgets/home-section/index.php:93 widgets/imageslider/index.php:65
+msgid "http://your-link.com"
+msgstr ""
+
+#: widgets/home-section/index.php:100
+msgid "Scroll Down Image Width"
+msgstr ""
+
+#: widgets/imageslider/index.php:20
+msgid "Image Slider"
+msgstr ""
+
+#: widgets/imageslider/index.php:43 widgets/imageslider/index.php:46
+msgid "Slide Name"
+msgstr ""
+
+#: widgets/imageslider/index.php:62
+msgid "Image Link (optional)"
+msgstr ""
+
+#: widgets/imageslider/index.php:71
+msgid "Image Text"
+msgstr ""
+
+#: widgets/imageslider/index.php:96
+msgid "Settings"
+msgstr ""
+
+#: widgets/imageslider/index.php:103
+msgid "Speed (ms)"
+msgstr ""
+
+#: widgets/imageslider/index.php:106
+msgid "2000"
+msgstr ""
+
+#: widgets/imageslider/index.php:112
+msgid "Auto Start"
+msgstr ""
+
+#: widgets/imageslider/index.php:116 widgets/imageslider/index.php:129
+msgid "True"
+msgstr ""
+
+#: widgets/imageslider/index.php:117 widgets/imageslider/index.php:130
+msgid "Fasle"
+msgstr ""
+
+#: widgets/imageslider/index.php:125
+msgid "Pause on Hover"
+msgstr ""
+
+#: widgets/imageslider/index.php:148
+msgid "Pagination Dots Color"
+msgstr ""
+
+#: widgets/imageslider/index.php:158
+msgid "Active Pagination Dot Color"
+msgstr ""
+
+#: widgets/imageslider/index.php:168
+msgid "Image Text Color"
+msgstr ""
+
+#: widgets/imageslider/index.php:179
+msgid "Image Text Typography"
+msgstr ""
+
+#: widgets/portfolio/index.php:20
+msgid "Portfolio"
+msgstr ""
+
+#: widgets/portfolio/index.php:41
+msgid "Number of items to show before \"Load More\""
+msgstr ""
+
+#: widgets/portfolio/index.php:44
+msgid "4"
+msgstr ""
+
+#: widgets/portfolio/index.php:60
+msgid "Item overlay color"
+msgstr ""
+
+#: widgets/portfolio/index.php:110
+msgid "Load More Button"
+msgstr ""
+
+#: widgets/portfolio/index.php:117
+msgid "Load More text"
+msgstr ""
+
+#: widgets/portfolio/index.php:126
+msgid "Loading text"
+msgstr ""
+
+#: widgets/portfolio/index.php:135
+msgid "No more text"
+msgstr ""
+
+#: widgets/portfolio/index.php:144
+msgid "Load more text color"
+msgstr ""
+
+#: widgets/portfolio/index.php:157
+msgid "Load more text hover color"
+msgstr ""
+
+#: widgets/portfolio/index.php:168
+msgid "Load More Typography"
+msgstr ""
+
+#: widgets/skills-lines/index.php:20
+msgid "Skills Lines"
+msgstr ""
+
+#: widgets/skills-lines/index.php:43
+msgid "Title"
+msgstr ""
+
+#: widgets/skills-lines/index.php:46 widgets/skills-lines/index.php:66
+msgid "Design"
+msgstr ""
+
+#: widgets/skills-lines/index.php:52
+msgid "Percent"
+msgstr ""
+
+#: widgets/skills-lines/index.php:55
+msgid "57%"
+msgstr ""
+
+#: widgets/skills-lines/index.php:93
+msgid "Text color"
+msgstr ""
+
+#: widgets/skills-lines/index.php:103
+msgid "Fill color"
+msgstr ""
+
+#: widgets/skills-lines/index.php:113
+msgid "Empty fill color"
+msgstr ""
+
+#: widgets/timeline/index.php:20
+msgid "Timeline"
+msgstr ""
+
+#: widgets/timeline/index.php:43 widgets/timeline/index.php:46
+#: widgets/timeline/index.php:65
+msgid "Timeline Content"
+msgstr ""
+
+#: widgets/timeline/index.php:52
+msgid "Year"
+msgstr ""
+
+#: widgets/timeline/index.php:54
+msgid "2019"
+msgstr ""
+
+#: widgets/timeline/index.php:84
+msgid "Content color"
+msgstr ""
+
+#: widgets/timeline/index.php:95
+msgid "Content Typography"
+msgstr ""
+
+#: widgets/timeline/index.php:102
+msgid "Year color"
+msgstr ""
+
+#: widgets/timeline/index.php:113
+msgid "Year Typography"
+msgstr ""
+
+#: widgets/timeline/index.php:120
+msgid "Line color"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "CocoBasic - Ukko Elementor Widgets"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Custom Elementor Widgets used in Ukko WordPress Theme."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.cocobasic.com"
+msgstr ""

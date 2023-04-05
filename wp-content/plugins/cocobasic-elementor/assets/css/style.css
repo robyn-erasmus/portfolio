@@ -1,0 +1,805 @@
+/* ===================================
+   1. Global CSS
+====================================== */
+
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+}
+
+.home-section .main-photo {
+    max-height: calc(100vh - 120px);
+    width: 536px;
+    object-fit: cover;
+}
+
+.home-section .entry-title {
+    font-size: 140px;
+    line-height: 143px;
+    font-weight: 800;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+}
+
+.home-section .entry-title span {
+    text-decoration: underline;
+}
+
+.home-section .main-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.home-section .main-btn img {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-name: scroll;
+    display: block;
+}
+
+@keyframes scroll {
+
+    0% {
+        opacity: 1;
+        transform: translateY(-25px);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+}
+
+.service-title,
+.about-info-link {
+    transition: .35s ease-out;
+}
+
+.service-holder:hover .service-title {    
+    transform: translateX(-10px);
+}
+
+.about-info-link:hover {
+    transform: translateX(10px);
+}
+
+a.service-link {
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+a.service-link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    height: 2px;
+    width: calc(100% - 2px);
+    transition: .35s ease-out;
+    background-color: #fff;
+}
+
+a.service-link:hover {
+    color: #000;
+}
+
+a.service-link:hover:before {
+    width: 0;
+}
+
+
+/* ===================================
+   2. Image PopUp (PreetyPhoto) CSS
+====================================== */
+
+div.pp_default .pp_loaderIcon {
+    display: none !important;
+}
+
+div.pp_default a.pp_arrow_previous {
+    background-image: url(../images/nav_left.png);
+    background-size: 20px 20px;    
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -99999999px;
+    transition: transform .3s ease;
+}
+
+div.pp_default a.pp_arrow_next {
+    background-image: url(../images/nav_right.png);
+    background-size: 20px 20px;    
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -99999999px;
+    transition: transform .3s ease;
+}
+
+div.pp_default a.pp_arrow_previous:hover {
+    transform: translateX(-5px);
+}
+
+div.pp_default a.pp_arrow_next:hover {
+    transform: translateX(5px);
+}
+
+div.pp_default .pp_close {
+    background-image: url(../images/close.png);
+    background-size: 30px 30px;
+    margin-top: 5px;
+    text-indent: -99999999px;
+    font-size: 0;
+    line-height: 0;    
+}
+
+div.pp_default .pp_next:hover {
+    background: url(../images/nav_right.png);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: 20px;
+}
+
+div.pp_default .pp_previous:hover {
+    background: url(../images/nav_left.png);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    background-size: 20px;    
+}
+
+div.pp_default .pp_nav .currentTextHolder {
+    padding: 0 0 0 20px;
+    color: #fff;
+}
+
+div.pp_default .pp_content_container .pp_details {
+    margin-top: 30px !important;
+    z-index: 3;
+}
+
+div.pp_default .pp_description {
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+    top: -30px;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+/* ===================================
+    3. Timeline CSS
+====================================== */
+
+.timeline-holder {
+    color: #fff;
+    padding: 60px 60px 60px 90px;
+    margin: 0;
+}
+
+.timeline-holder li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-holder li:before {
+    content: '';
+    position: absolute;
+    left: 28%;
+    top: 0;
+    background-color: #fff;
+    width: 3px;
+    height: 100%;
+}
+
+.timeline-holder li + li {
+    padding-top: 37px;
+}
+
+.timeline-holder li .date {
+    flex: 0 0 28%;
+    max-width: 28%;
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 30px;
+    transition: .35s ease-out;
+}
+
+.timeline-holder li:hover .date {
+    -webkit-transform: translateX(15px);
+    transform: translateX(15px);
+    color: #000;
+}
+
+.timeline-holder li p {
+    flex: 0 0 72%;
+    max-width: 72%;
+    padding: 0 50px 0 80px;
+    cursor: default;
+    transition: .35s ease-out;
+    margin-bottom: 0;
+}
+
+.timeline-holder li:hover p {
+    -webkit-transform: translateX(-15px);
+    transform: translateX(-15px);
+}
+
+
+/* ===================================
+    4. Skills Section CSS
+====================================== */
+
+.skills-holder {
+    position: relative;
+}
+
+.skills-holder > div:last-of-type {
+    margin-bottom: 0;
+}
+
+.skill-holder {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.skill-holder:after {
+    clear: both;
+    display: block;
+    content: "";
+}
+
+.skill-percent {
+    font-size: 45px;
+    line-height: 100%;
+    font-weight: 700;
+    width: 100px;
+    float: right;
+    color: #554247;
+    letter-spacing: -1px;
+}
+
+.skill {
+    width: 63%;
+    height: 10px;
+    background-color: #ffd2d3;
+}
+
+.skill-text {
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    width: 37%;
+    padding-right: 30px;
+}
+
+.skill-fill {
+    width: 10%;
+    height: 10px;
+    transition: width .7s;
+}
+
+.skill-text span {
+    font-size: 22px;
+    line-height: 35px;
+}
+
+
+/* ===================================
+    5. Portfolio CSS
+====================================== */
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -ms-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+.grid {
+    width: 100%;    
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    list-style: none;
+}
+
+.grid-item {
+    float: left;
+    font-size: 0;
+    line-height: 0;    
+    overflow: hidden;    
+    transition: opacity .3s;
+}
+
+.grid-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    max-width: none;    
+}
+
+.grid-sizer,
+.grid-item {
+    width: 50%;
+}
+
+.grid-item.p_one {
+    width: 100%;
+}
+
+.grid-item.p_one_half{
+    width: 50%;
+}
+
+.portfolio-text-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    font-size: 20px;
+    background-color: #000000;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+}
+
+.portfolio-text-wrapper {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.portfolio-text {
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.portfolio-cat {
+    font-size: 15px;
+    color: #fff;
+    line-height: 100%;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.grid-item a.item-link:hover .portfolio-text-holder,
+.grid-item.portfolio-content-loading a.item-link .portfolio-text-holder {
+    transform: translateX(0);
+}
+
+#portfolio-grid.portfoio-items-mask .grid-item {
+    opacity: 0.2;
+}
+
+.grid-item.portfolio-content-loading {
+    opacity: 1 !important;
+}
+
+.portfolio-load-content-holder {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all .5s ease;
+}
+
+.portfolio-load-content-holder.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-load-content-holder.show.viceversa {
+    opacity: 0;
+    transform: translateY(70px);
+}
+
+.portfolio-content-wrapper {
+    display: none;
+}
+
+.portfolio-content-wrapper.show {
+    display: block;
+}
+
+.close-icon {
+    background-image: url(../images/close-left-arrow.png);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background-color: #f44647;
+    margin-bottom: 20px;
+    background-size: 70px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    background-position: -5px 0;
+}
+
+#portfolio-grid {
+    transition: all .5s ease;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#portfolio-grid.hide {
+    opacity: 0;
+    transform: translateY(70px);    
+}
+
+.grid-item a.item-link.portfolio-content-loading:after, 
+.ajax-portfolio.portfolio-content-loading .portfolio-text-holder {
+    opacity: 1;
+}
+
+.portfolio-content {
+    padding-top: 150px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.more-posts-portfolio-holder.hide {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+}
+
+.more-posts-portfolio-holder {
+    margin-top: 50px;
+    min-height: 1px;
+}
+
+.more-posts-portfolio, 
+.no-more-posts-portfolio, 
+.more-posts-portfolio-loading {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.more-posts-portfolio:hover, 
+.no-more-posts-portfolio:hover, 
+.more-posts-portfolio-loading:hover {
+    opacity: 0.8 !important;
+}
+
+.more-posts-portfolio {
+    cursor: pointer;
+    transition: .35s ease-out;
+}
+
+.more-posts-portfolio:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    height: 2px;
+    width: calc(100% - 2px);
+    transition: .35s ease-out;
+    background-color: #000;
+}
+
+.more-posts-portfolio:hover {
+    color: #F44647;
+}
+
+.more-posts-portfolio:hover:before {
+    width: 0;
+}
+
+.no-more-posts-portfolio, 
+.more-posts-portfolio-loading {
+    display: none;
+}
+
+.more-posts-portfolio-holder.scroll {
+    margin-top: 50px;    
+}
+
+.more-posts-portfolio-holder.scroll .more-posts-portfolio, 
+.more-posts-portfolio-holder.scroll .no-more-posts-portfolio {
+    display: none !important;       
+}
+
+
+/* ===================================
+    6. Latest Posts CSS
+====================================== */
+
+.home-blog-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 40px;
+}
+
+.home-blog-list > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    min-height: 136px;
+}
+
+.home-blog-list li:last-child {
+    padding-bottom: 0;
+}
+
+.home-blog-list > li + li {
+    border-top: 2px solid #fff;
+}
+
+.home-blog-list li h4 {
+    margin-right: 140px;
+}
+
+.home-blog-list li h4 a {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.home-blog-list li .blog-list-info {
+    flex: 0 0 auto;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 3px;
+    min-width: 100px;
+    text-transform: uppercase;
+}
+
+.home-blog-list li .blog-list-info .cat-links-wrapper { 
+    margin-top: 6px;
+}
+
+
+/* ===================================
+    7. ImageSlider CSS
+====================================== */
+
+.owl-carousel .owl-item {
+    width: 100%;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 13px;
+    margin-bottom: 40px;
+    line-height: 0;
+    text-align: left;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    margin: 0;
+    background-color: #000000;
+    transition: all .3s ease;
+    width: 30px;
+    height: 10px;
+    border-radius: 0;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    transition: all .3s ease;
+    margin-right: 10px;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #000000;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background-color: #f44647;
+}
+
+
+/* ===================================
+    8. Responsive CSS
+====================================== */
+
+@media screen and (max-width: 1366px) {
+
+    .home-section .main-photo {
+        width: 470px;    
+    }
+}
+
+@media screen and (max-width: 1199px) {    
+
+    [data-jarallax-element] {
+        transform: none !important;
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+    
+    .close-icon {
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+    }
+
+    .timeline-holder {
+        padding: 50px;
+    }
+
+    .timeline-holder li p {
+        padding-right: 0;
+    }
+
+    .timeline-holder li:before {
+        left: 32%;
+    }
+
+    .skill {
+        width: 55%;
+        margin-right: 0;
+        margin-left: auto;       
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .home-section .main-photo {
+        width: auto;
+        max-height: 500px;
+        max-width: 65%;
+    }
+
+    .home-blog-list > li {
+        min-height: 120px;
+    }
+
+    .home-blog-list li h4 a {
+        font-size: 22px;
+    }
+
+    .skill {
+        width: 63%;
+        margin-right: 0;
+        margin-left: 0;        
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .grid {
+        width: 100%;
+        margin: 0;    
+    }
+
+    .grid-sizer, 
+    .grid-item {
+        width: 100% !important;
+    }
+
+    .timeline-holder {
+        padding: 50px 30px 50px 30px;
+    }
+
+    .timeline-holder li:before {
+        left: 25%;
+    }
+
+    .timeline-holder li .date {
+        font-size: 46px;
+    }
+
+    .timeline-holder li p {
+        padding: 0 20px 0 50px;
+    }
+
+    .home-blog-list {
+        padding-right: 20px;
+    }
+
+    .home-blog-list li h4 a {
+        font-size: 20px;
+        line-height: 1.5;
+    } 
+
+}
+
+@media screen and (max-width: 650px) {     
+
+    .simple-image-slider-pagination.swiper-pagination {
+        margin-bottom: 15px;
+    }       
+
+}
+
+@media screen and (max-width: 575px) {  
+
+    .home-section .main-photo {
+        max-width: 85%;
+    }
+
+    .timeline-holder li {
+        flex-wrap: wrap;
+    }
+
+    .timeline-holder li + li {
+        padding-top: 60px;
+    }
+
+    .timeline-holder li:before {
+        display: none;
+    }
+
+    .timeline-holder li p,
+    .timeline-holder li .date {
+        flex: 0 0 100%;
+        max-width: 100%;
+        transform: none !important;
+    }
+
+    .timeline-holder li p {
+        padding: 0;
+    }
+
+    .timeline-holder li .date {
+        margin-bottom: 20px;
+    }
+
+    .home-blog-list > li {
+        flex-wrap: wrap;
+    }
+
+    .home-blog-list li h4 {
+        margin-right: 0;
+    }
+
+    .home-blog-list li .blog-list-info {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}

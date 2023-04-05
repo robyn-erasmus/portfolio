@@ -1,0 +1,7 @@
+<wpml-config>
+	<admin-texts>		
+		<key name="theme_mods_ukko-wp">
+			<key name="cocobasic_menu_text"/>			
+		</key>
+	</admin-texts>
+</wpml-config>

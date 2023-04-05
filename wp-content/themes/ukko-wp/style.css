@@ -1,0 +1,1656 @@
+/*
+Theme Name: Ukko WP
+Theme URI: https://demo.cocobasic.com/ukko-wp/
+Description: One page personal portfolio WordPress theme. Online documentation you can find here - https://demo.cocobasic.com/documentation/MANUAL-UkkoWP.pdf
+Author: CocoBasic
+Author URI:  https://www.cocobasic.com
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.4
+Tags: grid-layout, four-columns, custom-colors, featured-images, threaded-comments, translation-ready, theme-options
+Text Domain: ukko-wp
+*/
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+1. Global CSS       
+2. Menu Holder CSS
+    2.1 Menu CSS    
+3. Blog Page CSS
+4. Single Post CSS
+5. Comments CSS
+6. Contact Page CSS
+7. Archive CSS / Search CSS / 404 Page CSS / Attachment Page
+8. Footer CSS
+9. Footer Widgets CSS
+10. Responsive CSS
+-------------------------------------------------------------------*/
+
+
+/* ===================================
+    1. Global CSS
+====================================== */
+
+*, 
+::after, 
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #000000;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background-color: #fff0f0;
+}
+
+body:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 60%;     
+    width: 40%;   
+    height: 100%;
+    background-color: #fff;
+}
+
+body a {
+    text-decoration: none;
+    color: #000000;
+    transition: color .3s linear;
+}
+
+body a:hover {
+    color: #f44647;
+}
+
+body img {
+    max-width: 100%;    
+    height: auto;
+    display: block;
+}
+
+.doc-loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: #fff;
+}
+
+.doc-loader img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;    
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+#content {
+    line-height: 30px;
+}
+
+.content-holder {
+    background-color: #fff0f0;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    position: relative;
+    z-index: 1;
+}
+
+.elementor-page .content-holder {
+    padding-top: 0;
+}
+
+.extra-width {
+    width: calc(100% + 230px) !important;
+    margin-right: -230px;
+    max-width: 900px;
+}
+
+.full-width {
+    width: calc(100% + 130px) !important;
+    margin-right: -130px;
+    max-width: 800px;
+}
+
+.site-content {
+    width: 1170px;
+    max-width: 95%;
+}
+
+.content-800 {
+    width: 800px;
+    max-width: 100%;
+}
+
+.content-670 {
+    width: 670px;
+    max-width: 100%;
+}
+
+.content-570 {
+    width: 570px;
+    max-width: 100%;
+}
+
+h1.entry-title.page-title {
+    padding-top: 0;
+    padding-bottom: 30px;
+}
+
+.section-info {
+    font-size: 22px;
+    line-height: 35px;
+}
+
+.global-color {
+    color: #f44647;
+}
+
+.global-background-color {
+    background-color: #f44647;
+}
+
+.animate {
+    opacity: 0;
+    transition: .5s transform ease-in, .5s opacity ease-in;
+    -ms-transform: translate(0px,70px);
+    -webkit-transform: translate(0px,70px);
+    transform: translate(0px,70px); 
+}
+
+.animate.show-it {
+    opacity: 1;
+    -ms-transform: translate(0px,0px); 
+    -webkit-transform: translate(0px,0px);
+    transform: translate(0px,0px);  
+}
+
+
+/* ===================================
+    2. Menu Holder CSS
+====================================== */
+
+.header-holder {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    max-width: 40%;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    padding: 85px 100px 85px 200px;
+}
+
+.admin-bar .header-holder,
+.admin-bar .toggle-holder {
+    transform: translateY(32px);
+}
+
+.header-wrapper {
+    width: 230px;
+    position: relative;
+}
+
+.toggle-holder {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 14px 10px;
+    background-color: #fff;
+}
+
+#toggle {
+    height: 23px;
+    width: 30px;
+    position: relative;
+}
+
+#toggle:hover {
+    cursor: pointer;
+}
+
+#toggle:before,
+#toggle:after {
+    content: '';
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: -webkit-transform 0.25s;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    top: 8px;
+    background-color: #000000;
+}
+
+#toggle:before {
+    -webkit-transform: translate3d(0, -8px, 0);
+    transform: translate3d(0, -8px, 0px);
+    width: 21px;
+    margin-left: 0;
+}
+
+#toggle:hover:before {
+    margin-left: 9px;
+
+}
+
+#toggle.on:before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
+    transform: rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
+    margin-left: 0;
+    width: 26px;
+}
+
+#toggle.on:after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    width: 26px;
+}
+
+#toggle:after {
+    -webkit-transform: translate3d(0, 8px, 0);
+    transform: translate3d(0, 8px, 0);
+}
+
+#toggle .menu-line {
+    width: 13px;
+    height: 3px;
+    position: absolute;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    margin-left: 0;
+    top: 8px;
+    background-color: #000000;
+}
+
+#toggle:hover .menu-line {
+    margin-left: 17px;
+}
+
+#toggle.on .menu-line {
+    opacity: 0;
+}
+
+.site-title {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    position: relative;
+    display: inline;
+    text-transform: uppercase;
+    transition: color .35s ease-out;
+    cursor: default;
+}
+
+.site-title:hover {
+    color: #f44647;
+}
+
+.site-title:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 5px;
+    height: 3px;
+    width: calc(100% - 5px);
+    background-color: #000000;
+    transition: .35s ease-out;
+}
+
+.site-title:hover:before {
+    width: 0;
+    background-color: #f44647;
+}
+
+.site-description {
+    line-height: 130%;
+}
+
+.top-pagination {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 150px;
+}
+
+.top-pagination.mobile {
+    display: none;
+}
+
+.top-pagination > div {
+    display: inline-block;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.current-num {
+    width: 25px;
+    position: relative;
+    height: 30px;
+    color: #f44647;
+}
+
+.current-num span {
+    position: absolute;    
+    left: 0;    
+}
+
+.pagination-div {
+    position: relative;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.menu-social {
+    position: fixed;
+    bottom: 80px;
+}
+
+.menu-social a {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-right: 25px;
+}
+
+.menu-social a:last-of-type {
+    margin-right: 0;
+}
+
+
+/* ===================================
+    2.1 Menu CSS
+====================================== */
+
+.menu-holder {
+    margin-top: 50px;
+}
+
+.main-menu.sm-clean {
+    background-color: transparent;
+    display: inline-block;
+}
+
+.sm ul {
+    padding-left: 0;
+}
+
+.sm-clean a {
+    position: relative;
+}
+
+body .sm-clean a {
+    color: #000;
+}
+
+body .sm-clean a,
+body .sm-clean a:hover, 
+body .sm-clean a:focus, 
+body .sm-clean a:active {
+    padding: 5px 0;
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+.sm-clean a.current, 
+.sm-clean a:hover, 
+.sm-clean a:active, 
+.sm-clean a.highlighted, 
+.sm-clean ul a:hover, 
+.sm-clean ul a:active, 
+.sm-clean ul a.highlighted,
+.sm-clean li.current > a {
+    color: #f44647;
+}
+
+.sm-clean a span.sub-arrow {
+    color: #f44647;
+}
+
+
+/* ===================================
+    3. Blog Page CSS
+====================================== */
+
+.blog-holder > article {
+    margin-bottom: 125px;
+}
+
+.blog-holder > article:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+.blog-item-holder .entry-holder {
+    width: 100%;
+    position: relative;
+}
+
+.blog-item-holder h2.entry-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    padding: 0;
+    word-break: break-word;
+    margin-top: 5px;
+    position: relative;
+}
+
+.entry-info {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 20px 0 0;
+    display: inline-flex;
+    width: 100%;
+}
+
+.entry-info li {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.entry-info > li + li {
+    margin-left: 25px;
+}
+
+ul.cat-links {
+    padding: 0;
+    list-style: none;
+}
+
+ul.cat-links > li {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: auto;
+}
+
+ul.cat-links > li:last-child {
+    margin-bottom: 0;
+}
+
+ul.cat-links > li:after {
+    content: ",";
+    margin-right: 5px;
+}
+
+ul.cat-links > li:last-child:after {
+    display: none;
+}
+
+.more-posts-index-holder {
+    text-align: center;
+    min-height: 1px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.more-posts, 
+.no-more-posts, 
+.more-posts-loading {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.no-more-posts:hover, 
+.more-posts-loading:hover {
+    opacity: 0.8 !important;
+}
+
+.more-posts {
+    cursor: pointer;
+    transition: .35s ease-out;
+}
+
+.more-posts:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    height: 2px;
+    width: calc(100% - 2px);
+    transition: .35s ease-out;
+    background-color: #000;
+}
+
+.more-posts:hover {
+    color: #F44647;
+}
+
+.more-posts:hover:before {
+    width: 0;
+}
+
+.more-posts {
+    cursor: pointer;   
+}
+
+.more-posts-loading, 
+.no-more-posts {
+    display: none;
+    cursor: auto;   
+}
+
+.more-posts-index-holder.scroll .more-posts, 
+.more-posts-index-holder.scroll .no-more-posts {
+    display: none !important;    
+}
+
+
+/* ===================================
+    4. Single Post CSS
+====================================== */
+
+.single-post .content-holder {
+    padding-bottom: 1px;
+}
+
+.single-post h1.entry-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.single-post .attachment-post-thumbnail {
+    margin: 0 0 30px;
+}
+
+.single-post .entry-info {
+    margin: 0 0 40px 0;
+}
+
+.img-caption {
+    color: #fff;
+    display: table;
+    padding: 12px 60px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f37b83;
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+}
+
+.single-post .entry-content {
+    width: 680px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.tags-holder {
+    margin: 30px 0;
+    display: inline-block;
+}
+
+body .tags-holder a  {
+    border: 2px solid #f44647;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 5px 17px 5px 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: #f44647;
+    transition: all .3s ease;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.tags-holder a:last-of-type {
+    margin-right: 0;
+}
+
+.tags-holder a:hover {
+    background-color: transparent !important;
+    color: #f44647;
+}
+
+.wp-link-pages {
+    clear: both;
+}
+
+.wp-link-pages > * { 
+    margin: 0 5px;
+    font-size: 16px;
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.wp-link-pages > span {
+    color: #ffffff !important;
+    padding: 1px 4px;
+    background-color: #000000;
+}
+
+.single .nav-links {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.single .nav-links:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #000000;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.single .nav-previous {
+    display: inline-block;
+    text-align: left;
+    float: left;
+    width: 44%;
+}
+
+.single .nav-next {
+    display: inline-block;
+    float: right;
+    width: 44%;
+    text-align: right;
+}
+
+.nav-links p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.nav-previous a, .nav-next a {
+    font-size: 20px;
+    line-height: 140%;
+    word-break: break-word;
+    font-weight: 500;
+}
+
+.single-post .nav-next a {
+    float: right;
+}
+
+.single-post #sidebar {
+    padding-top: 90px;
+}
+
+
+/* ===================================
+    5. Comments CSS
+====================================== */
+
+#comments-wrapper {
+    padding-top: 40px;    
+}
+
+.comment-form-holder a {
+    color: #000000;
+}
+
+ol.comments-list-holder {
+    margin: 0;
+}
+
+.comments-holder ol.comments-list-holder, 
+.comments-holder ul.children {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.comments-holder ul.children {
+    position: relative;
+}
+
+.comments-holder ul.children:before {
+    content: "";
+    width: 2px;
+    height: 50px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 34px;
+    top: 10px;
+    left: 3.75em;
+}
+
+.vcard img {
+    border-radius: 100px;
+}
+
+.comments-holder .comment-author-date-replay-holder {
+    margin-left: 110px;
+    padding-top: 8px;
+    padding-left: 0;
+    letter-spacing: 2px;
+    line-height: 160%;
+}
+
+.comments-holder .pingback,
+.comments-holder .trackback {
+    padding-bottom: 60px;
+}
+
+.comments-holder .pingback .comment-author-date-replay-holder, 
+.comments-holder .pingback .comment-text,
+.comments-holder .trackback .comment-author-date-replay-holder, 
+.comments-holder .trackback .comment-text {
+    margin-left: 0;
+}
+
+ul.comment-author-date-replay-holder li {
+    display: inline-block;
+}
+
+ul.comment-author-date-replay-holder li.comment-author {
+    max-width: 90%;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.comment-date {
+    margin-left: 110px;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 12px;
+    margin-top: -8px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.trackback .comment-date,
+.pingback .comment-date {
+    margin-left: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.comment-reply {
+    float: right;
+}
+
+a.comment-reply-link {
+    text-decoration: none;
+    position: relative;
+}
+
+.comments-number {
+    font-size: 24px;
+    line-height: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+.comment-content-holder {
+    margin-left: 50px;
+}
+
+.comment-content-holder {
+    width: 470px;
+}
+
+.comment-time-separator {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.comment-text {
+    clear: both;
+    display: block;
+}
+
+.comment-text p {
+    display: inline;
+    font-size: 15px;
+    line-height: 200%;
+}
+
+.replay-at-author {
+    color: #f44647;
+    margin-right: 8px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    text-transform: uppercase;
+}
+
+#reply-title {   
+    font-size: 20px;
+    color: #000;
+}
+
+#cancel-comment-reply-link {
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+#cancel-comment-reply-link:before {
+    content: "-";
+    padding-right: 5px;
+}
+
+.comment-time {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.comment {
+    padding-bottom: 80px;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.children .comment {    
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+
+.comment:last-child {
+    padding-bottom: 0;
+}
+
+.comments-list-holder .children > li {
+    padding-left: 1.75em;
+}
+
+.logged-in-as {
+    margin-bottom: 50px;
+}
+
+.comment-form-holder {
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+#commentform #email, 
+#commentform #author, 
+#commentform #comment {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #000;
+       letter-spacing: 2px;
+    border: 0;
+    border-bottom: 2px solid;
+    height: 28px;
+    font-size: 15px;
+    line-height: 30px;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 40px;
+    background-color: transparent;
+}
+
+#commentform #email, 
+#commentform #author {
+    padding-bottom: 5px;
+}
+
+#commentform #email {
+    margin-bottom: 35px;
+}
+
+#commentform input[type=text]::-webkit-input-placeholder, 
+#commentform input[type=email]::-webkit-input-placeholder, 
+#commentform textarea::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 30px;        
+}
+
+#commentform input[type=text]:-ms-input-placeholder, 
+#commentform input[type=email]:-ms-input-placeholder, 
+#commentform textarea:-ms-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+#commentform input[type=text]::placeholder, 
+#commentform input[type=email]::placeholder, 
+#commentform textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 15px;
+    line-height: 30px;
+    opacity: 1;    
+}
+
+#commentform #comment {
+    height: 150px;
+}
+
+.form-submit {
+    position: relative;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.form-submit input[type=submit] {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border: 2px solid;
+    display: block;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    cursor: pointer;    
+    vertical-align: middle;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    width: 100%;    
+}
+
+.form-submit input[type=submit]:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.comment-form-cookies-consent {
+    color: #000;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 35px;
+}
+
+.comment-form-cookies-consent input {
+    float: left;
+}
+
+.comment-form-cookies-consent:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* ===================================
+    6. Contact Page CSS
+====================================== */
+
+.wpcf7-form {    
+    margin: 0 auto;
+}
+.wpcf7-form p {
+    margin-bottom: 0;
+}
+
+.wpcf7-form input[type=text], 
+.wpcf7-form input[type=email], 
+.wpcf7-form textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 25px;    
+    font-weight: 600;
+    color: #000;  
+    background-color: transparent;
+    width: 100%;
+    height: 28px;
+    border: 0;
+    border-bottom: 2px solid;
+    padding-top: 13px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    -webkit-box-sizing: initial;
+    box-sizing: initial;;
+}
+
+.wpcf7-form input[name="your-name"] {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.wpcf7-form textarea {
+    height: 150px;
+}
+
+.wpcf7-form input[type=submit] {
+    display: inline-block;
+    border: 2px solid;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 14px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: transparent;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    letter-spacing: 8px;
+    transition: opacity .3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.wpcf7-form input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+.wpcf7-form input[type=text]::-webkit-input-placeholder, 
+.wpcf7-form input[type=email]::-webkit-input-placeholder, 
+.wpcf7-form textarea::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;    
+    letter-spacing: 3px;
+    opacity: 1;  
+}
+
+.wpcf7-form input[type=text]:-ms-input-placeholder, 
+.wpcf7-form input[type=email]:-ms-input-placeholder, 
+.wpcf7-form textarea:-ms-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;  
+    letter-spacing: 3px;  
+    opacity: 1;  
+}
+
+.wpcf7-form input[type=text]::placeholder, 
+.wpcf7-form input[type=email]::placeholder, 
+.wpcf7-form textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    opacity: 1;    
+}
+
+span.wpcf7-not-valid-tip {
+    color: #000;
+    font-size: 10px;
+    margin-top: -15px;
+}    
+
+div.wpcf7-response-output {
+    color: #000;
+    margin: 0;
+    padding: 0.2em 1em;
+    font-size: 12px;    
+    text-align: center;
+    border: 2px solid;
+}
+
+span.wpcf7-list-item {
+    margin: 0;
+}
+
+div.wpcf7 .ajax-loader {
+    display: none !important;
+}
+
+
+/* ===================================
+    7. Archive CSS / Search CSS / 404 Page CSS / Attachment Page
+====================================== */
+
+.archive .navigation.pagination, 
+.search .navigation.pagination {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.search .nav-links > *,
+.archive .nav-links > * {
+    padding: 0 5px;
+}
+
+.search .nav-links .current,
+.archive .nav-links .current {
+    color: #f44647;
+}
+
+.archive .blog-holder > article, 
+.search .blog-holder > article {
+    margin-bottom: 70px;
+}
+
+.archive-title {
+    margin-bottom: 90px;
+}
+
+.archive-title h1 {
+    font-size: 15px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    padding: 0;
+    display: inline;
+    position: relative;
+    text-transform: uppercase;
+    transition: color .35s ease-out;        
+}
+
+.archive-title h1:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 5px;
+    height: 3px;
+    width: calc(100% - 5px);
+    background-color: #000000;
+    transition: .35s ease-out;
+}
+
+.search-no-results h2 {
+    text-align: center;
+}
+
+.error-text-help-first {
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 95px;
+}
+
+.error-text-help-second {
+    font-size: 26px;
+    line-height: 34px;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.error-text-404 {
+    font-weight: 700;
+    font-size: 350px;
+    line-height: 100%;
+}
+
+
+/* ===================================
+    8. Footer CSS
+====================================== */
+
+footer {
+    width: 1170px;
+    max-width: 95%;
+}
+
+.footer-content {
+    background-color: #fff0f0;
+    z-index: 1;
+    position: relative;
+}
+
+
+/* ===================================
+    9. Footer Widgets CSS
+====================================== */
+
+#sidebar {
+    margin: 0 auto;
+    padding-top: 40px;
+    font-size: 14px;
+    line-height: 180%;
+}
+
+#sidebar p {
+    margin-bottom: 12px;
+}
+
+#sidebar .widget li {
+    margin-bottom: 10px;
+}
+
+#sidebar table, 
+#sidebar th, 
+#sidebar td {
+    padding: 5px;
+}
+
+select {
+    max-width: 100%;
+    background-color: #fcf0f0;
+    color: #000;
+    border-color: #000;
+}
+
+ul#footer-sidebar li.widget {
+    width: 40%;
+    margin-right: 20%;
+    float: left;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+ul#footer-sidebar li.widget:nth-child(2n) {
+    margin-right: 0;
+}
+
+ul#footer-sidebar li.widget:nth-child(2n+1) {
+    clear: left;
+}
+
+.widget a {
+    border-bottom: 1px solid;
+}
+
+ul#footer-sidebar:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+#sidebar ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 0;
+}
+
+#sidebar ul.children,
+#sidebar ul.sub-menu {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#sidebar .tagcloud a {
+    line-height: 160%;
+}
+
+h4.widgettitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 0;
+    padding-bottom: 12px;
+}
+
+#sidebar li.widget {
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+#sidebar .footer-social a {
+    font-size: 19px;
+    color: #fff;
+    margin-left: 84px;
+}
+
+#sidebar .footer-social a:first-child {
+    margin-left: 0;
+}
+
+.search-field {
+    font-family: 'Poppins', sans-serif;       
+    color: #000;
+    padding: 0;
+    margin-top: -3px;
+    font-size: 14px;
+    line-height: 180%;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-align: left;
+    transition: border 0.4s ease;
+    -webkit-appearance: none;
+}
+
+.search-field:focus {
+    border-bottom: 2px solid;
+}
+
+.search-field::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 180%;
+    font-weight: 400;
+    opacity: 1;
+    text-align: left;
+}
+
+.search-field:-ms-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 180%;
+    font-weight: 400;
+    opacity: 1;
+    text-align: left;
+}
+
+.search-field::placeholder {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 180%;
+    font-weight: 400;
+    opacity: 1;
+    text-align: left;
+}
+
+
+/* ===================================
+    10. Responsive CSS
+====================================== */
+
+@media screen and (max-width: 1600px) {
+
+    .header-holder {
+        padding-left: 230px;
+    }
+
+}
+
+
+@media screen and (max-width: 1360px) {
+
+    .header-holder {
+        padding: 60px 100px 60px 270px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+
+    .content-holder,
+    .footer-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-holder {
+        right: auto;
+        left: -300px;
+        background-color: #fff;
+        max-width: 300px;
+        width: 100%;
+        padding: 80px 30px 60px 50px;
+        overflow: auto;
+        height: 100%;
+        transition: .25s ease-in;
+    }
+
+    .open .header-holder {
+        left: 0;
+    }
+
+    .toggle-holder {
+        display: block;
+    }
+
+    .top-pagination {
+        padding-bottom: 50px;
+    }
+
+    .extra-width {
+        width: calc(100% + 190px) !important;
+        margin-right: -190px;
+    }
+
+    .blog-holder > article {
+        margin-bottom: 100px;
+    }
+
+    .menu-social {
+        position: relative;
+        bottom: 0;
+        margin-top: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+
+    body:before {
+        width: 100%;
+    }
+
+    body:after {
+        display: none;
+    }
+
+    .content-holder, 
+    .footer-content {
+        width: 100%;
+    }
+
+    .content-670 {
+        margin: 0 auto;
+    }
+
+    .blog-item-holder .entry-holder {
+        display: block;
+    }
+
+    .more-posts-index-holder {
+        margin-top: 60px;
+    }       
+
+    .single .nav-links {
+        margin: 50px 0;
+    }        
+
+    .comments-holder .pingback,
+    .comments-holder .trackback {
+        padding-bottom: 30px;
+    }
+
+    .extra-width,
+    .full-width {
+        width: 100% !important;
+        margin-right: initial !important;
+    }
+
+}
+
+@media screen and (max-width: 782px) {
+
+    .admin-bar .header-holder,
+    .admin-bar .toggle-holder {
+        transform: translateY(46px);
+    }
+
+    body.admin-bar {
+        margin-top: -46px;
+        padding-top: 46px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .toggle-holder {
+        width: 100%;
+    }    
+
+    .top-pagination {
+        display: none
+    }
+
+    .top-pagination.mobile {
+        display: block;
+        padding: 0;
+        position: fixed;
+        right: 15px;
+        top: 11px;
+    }
+
+    .blog-holder > article {
+        margin-bottom: 65px;
+    }    
+
+    .blog-item-holder.sticky {
+        width: 100%;
+        margin-left: 0;
+    }  
+
+    .archive-title {
+        margin-bottom: 50px;
+    }
+
+    .archive .navigation.pagination, 
+    .search .navigation.pagination {
+        margin-top: 50px;
+    }
+
+    .error-text-404 {
+        font-size: 90px;
+    }
+
+    .single .nav-links:before {
+        display: none;
+    }    
+
+    .single .nav-previous, 
+    .single .nav-next {
+        display: block;
+        width: 95%;
+        text-align: center;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .single .nav-previous a, 
+    .single .nav-next a {
+        float: none;
+    }
+
+    .single .nav-previous {    
+        padding-bottom: 40px;
+    }
+
+    .comment-form-holder {
+        padding-top: 0;
+    }
+
+    .comment {
+        padding-bottom: 50px;
+    }
+
+    .replay-at-author {
+        font-size: 14px;       
+    }
+
+    .comment-text p {
+        font-size: 14px;
+        line-height: 180%;
+    }
+
+    #sidebar {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .single-post #sidebar {
+        padding-top: 40px;
+    }
+
+    ul#footer-sidebar li.widget {
+        float: none;
+        width: 100%;
+    }
+
+    ul#footer-sidebar li.widget:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+@media screen and (max-width: 650px) {     
+
+    .single-post h1.entry-title, 
+    .blog-item-holder h2.entry-title, 
+    h1.entry-title.page-title {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }     
+
+        .entry-info {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .entry-info > li + li {
+        margin-left: 0;
+        margin-top: 5px;
+    } 
+
+    blockquote.wp-block-quote {
+        font-size: 20px;
+    }
+
+    .comment-date {
+        font-size: 13px;
+        margin-top: -15px;
+    }      
+
+    .comments-list-holder .children > li {
+        padding-left: 0.75em;
+    }
+
+    .comments-holder ul.children:before {
+        left: 2.75em;
+    }
+
+}
